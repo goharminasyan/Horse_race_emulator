@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean name="horseService" class="am.epam.service.HorseServiceImpl">
+        <constructor-arg name="horses" ref="horses"/>
+    </bean>
+
+    <bean name="raceService" class="am.epam.service.RaceServiceImpl">
+        <property name="horseService" ref="horseService"/>
+    </bean>
+
+        <bean name="emulationService" class="am.epam.service.EmulationServiceImpl">
+          <property name="horseService" ref="horseService"/>
+        </bean>
+
+
+    <util:list id="horses" value-type="am.epam.beans.Horse">
+        <ref bean="horse1"/>
+        <ref bean="horse2"/>
+        <ref bean="horse3"/>
+        <ref bean="horse4"/>
+        <ref bean="horse5"/>
+        <ref bean="horse6"/>
+        <ref bean="horse7"/>
+        <ref bean="horse8"/>
+    </util:list>
+
+    <bean name="horse1" class="am.epam.beans.Horse">
+        <constructor-arg name="breed" value="Arabian"/>
+        <constructor-arg name="raceNumber" value="0"/>
+        <constructor-arg name="rider" value="Ahmed "/>
+    </bean>
+
+    <bean name="horse2" class="am.epam.beans.Horse">
+        <constructor-arg name="breed" value="Friesian"/>
+        <constructor-arg name="raceNumber" value="1 "/>
+        <constructor-arg name="rider" value="Oliver"/>
+    </bean>
+
+    <bean name="horse3" class="am.epam.beans.Horse">
+        <constructor-arg name="breed" value="Mustang"/>
+        <constructor-arg name="raceNumber" value="2"/>
+        <constructor-arg name="rider" value="James"/>
+    </bean>
+
+    <bean name="horse4" class="am.epam.beans.Horse">
+        <constructor-arg name="breed" value="Shire"/>
+        <constructor-arg name="raceNumber" value="3"/>
+        <constructor-arg name="rider" value="Lucas"/>
+    </bean>
+
+    <bean name="horse5" class="am.epam.beans.Horse">
+        <constructor-arg name="breed" value="Cob"/>
+        <constructor-arg name="raceNumber" value="4"/>
+        <constructor-arg name="rider" value="William"/>
+    </bean>
+
+    <bean name="horse6" class="am.epam.beans.Horse">
+        <constructor-arg name="breed" value="Shire"/>
+        <constructor-arg name="raceNumber" value="5"/>
+        <constructor-arg name="rider" value="Henry"/>
+    </bean>
+
+    <bean name="horse7" class="am.epam.beans.Horse">
+        <constructor-arg name="breed" value="Mustang"/>
+        <constructor-arg name="raceNumber" value="6"/>
+        <constructor-arg name="rider" value="Jack"/>
+    </bean>
+
+    <bean name="horse8" class="am.epam.beans.Horse">
+        <constructor-arg name="breed" value="Arabian"/>
+        <constructor-arg name="raceNumber" value="7"/>
+        <constructor-arg name="rider" value="Daniel"/>
+    </bean>
+</beans>
