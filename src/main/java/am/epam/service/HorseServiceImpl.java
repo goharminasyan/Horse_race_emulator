@@ -4,19 +4,23 @@ import am.epam.beans.Horse;
 
 import java.util.List;
 
+
 public class HorseServiceImpl implements HorseService {
-    private List<Horse> horses;
 
-    public HorseServiceImpl(List<Horse> horses) {
-        this.horses = horses;
+    private List<Horse> horseList;
+
+    public HorseServiceImpl(List<Horse> horseList) {
+        this.horseList = horseList;
     }
 
+    public List<Horse> getHorseList() {
+        return horseList;
+    }
+
+    @Override
     public List<Horse> getHorses() {
-        return horses;
+        if(horseList!=null){
+        return horseList;}
+        return null;
     }
-
-    public Horse getHorse(int index) {
-        return horses.get(index);
-    }
-
 }
