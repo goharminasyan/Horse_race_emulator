@@ -1,6 +1,8 @@
 package am.epam.beans;
 
+
 public class Horse {
+
     private String breed;
     private int raceNumber;
     private String rider;
@@ -9,6 +11,9 @@ public class Horse {
         this.breed = breed;
         this.raceNumber = raceNumber;
         this.rider = rider;
+    }
+
+    public Horse() {
     }
 
     public String getBreed() {
@@ -23,14 +28,8 @@ public class Horse {
         return rider;
     }
 
-
-
         @Override
     public String toString() {
-        return  "breed='" + breed + '\''+',' +
-                " raceNumber=" + raceNumber+',' +
-                " rider='" + rider + '\''+',' +
-                "\n";
+        return  String.format(getRaceNumber() + " - %s, %d, %s",  getBreed(), getRaceNumber(), getRider()) + "\n" ;
     }
-
 }

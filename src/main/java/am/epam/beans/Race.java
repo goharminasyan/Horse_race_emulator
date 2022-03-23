@@ -9,8 +9,7 @@ public class Race {
     private long length;
     private LocalDate startDate;
 
-
-    public List<Horse> getParticipatingHorses() {
+       public List<Horse> getParticipatingHorses() {
         return participatingHorses;
     }
 
@@ -36,10 +35,6 @@ public class Race {
 
     @Override
     public String toString() {
-        return "Race{ \n" +
-                "participatingHorses=" + participatingHorses +
-                ", length=" + length +
-                ", startDate=" + startDate +
-                '}';
+        return String.format("%s, %s, %s", getStartDate(), getParticipatingHorses(), getLength());
     }
 }
