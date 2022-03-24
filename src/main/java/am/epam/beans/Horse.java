@@ -24,13 +24,10 @@ public class Horse {
     }
 
 
-
-        @Override
+    @Override
     public String toString() {
-        return  "breed='" + breed + '\''+',' +
-                " raceNumber=" + raceNumber+',' +
-                " rider='" + rider + '\''+',' +
-                "\n";
+        return String.format("%s, %d, %s", getBreed(), getRaceNumber(), getBreed()) + "\n";
+
     }
 
 }

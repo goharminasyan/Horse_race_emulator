@@ -1,12 +1,24 @@
 package am.epam.service;
 
 import am.epam.beans.Race;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
-public class RaceServiceImpl implements RaceService{
+@Component("raceService")
+public class RaceServiceImpl implements RaceService {
 
     private HorseService horseService;
+
+    @Autowired
+    public void setHorseService(HorseService horseService) {
+        this.horseService = horseService;
+    }
+
+    public HorseService getHorseService() {
+        return horseService;
+    }
 
     @Override
     public Race getRace() {
@@ -16,12 +28,5 @@ public class RaceServiceImpl implements RaceService{
         race.setStartDate(LocalDate.of(2022, 6, 10));
         return race;
     }
-
-    public HorseService getHorseService() {
-        return horseService;
-    }
-
-    public void setHorseService(HorseService horseService) {
-        this.horseService = horseService;
-    }
 }
+
