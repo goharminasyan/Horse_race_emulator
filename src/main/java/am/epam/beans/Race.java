@@ -1,8 +1,11 @@
 package am.epam.beans;
 
+import org.springframework.stereotype.Component;
+
 import java.time.LocalDate;
 import java.util.List;
 
+@Component
 public class Race {
 
     private List<Horse> participatingHorses;
@@ -36,10 +39,6 @@ public class Race {
 
     @Override
     public String toString() {
-        return "Race{ \n" +
-                "participatingHorses=" + participatingHorses +
-                ", length=" + length +
-                ", startDate=" + startDate +
-                '}';
+        return String.format("%s, %s, %s", "Start day - " + getStartDate(), "Participating horses - " + getParticipatingHorses(), "Length - " + getLength());
     }
 }
